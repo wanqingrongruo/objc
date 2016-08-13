@@ -48,8 +48,8 @@ struct objc_class {
     Class isa;
 
 #if !__OBJC2__
-    Class super_class                                        OBJC2_UNAVAILABLE;
-    const char *name                                         OBJC2_UNAVAILABLE;
+    Class super_class                                        OBJC2_UNAVAILABLE; // 父类
+    const char *name                                         OBJC2_UNAVAILABLE; // 类名
     long version                                             OBJC2_UNAVAILABLE;
     long info                                                OBJC2_UNAVAILABLE;
     long instance_size                                       OBJC2_UNAVAILABLE;
