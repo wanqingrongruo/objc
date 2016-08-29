@@ -48,15 +48,15 @@ struct objc_class {
     Class isa;
 
 #if !__OBJC2__
-    Class super_class                                        OBJC2_UNAVAILABLE;
-    const char *name                                         OBJC2_UNAVAILABLE;
-    long version                                             OBJC2_UNAVAILABLE;
-    long info                                                OBJC2_UNAVAILABLE;
-    long instance_size                                       OBJC2_UNAVAILABLE;
-    struct objc_ivar_list *ivars                             OBJC2_UNAVAILABLE;
-    struct objc_method_list **methodLists                    OBJC2_UNAVAILABLE;
-    struct objc_cache *cache                                 OBJC2_UNAVAILABLE;
-    struct objc_protocol_list *protocols                     OBJC2_UNAVAILABLE;
+    Class super_class                                        OBJC2_UNAVAILABLE; // 父类,,它定义了本类的超类.类对象所属类型(isa 指针指向的类型)是另一个类,叫做"元类"(metaClass)
+    const char *name                                         OBJC2_UNAVAILABLE; // 类名
+    long version                                             OBJC2_UNAVAILABLE; // 类的版本信息, 默认为0
+    long info                                                OBJC2_UNAVAILABLE; // 类信息,供运行期使用的一些位标识
+    long instance_size                                       OBJC2_UNAVAILABLE; // 该类的实例变量大小
+    struct objc_ivar_list *ivars                             OBJC2_UNAVAILABLE; // 该类的而成员变量链表
+    struct objc_method_list **methodLists                    OBJC2_UNAVAILABLE; // 该类方法定义的链表  类的实例方法都在methodLists里,类方法在元类的methodLists里
+    struct objc_cache *cache                                 OBJC2_UNAVAILABLE; // 方法缓存
+    struct objc_protocol_list *protocols                     OBJC2_UNAVAILABLE; // 协议链表
 #endif
 
 } OBJC2_UNAVAILABLE;
